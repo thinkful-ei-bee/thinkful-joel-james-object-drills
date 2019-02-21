@@ -40,6 +40,35 @@ let hobbitMeals = {
   ]
 };
 
-console.log(hobbitMeals.meals[3]);
+//console.log(hobbitMeals.meals[3]);
 
+// 4:
+
+function createPerson(...attributes){
+  const [ name, jobTitle ] = attributes;
+  return {
+    name,
+    jobTitle,
+  };
+}
+
+let people = [];
+let names = [
+  'Jazz Jackrabbit',
+  'Duke Nukem',
+  'Gordon Freeman',
+];
+let jobs = [
+  'Sonic Immitator',
+  'Bubble Gum Chewer',
+  'Crowbar Expert',
+];
+
+for (let i = 0; i < 3; i++) {
+  people.push(createPerson(names[i], jobs[i]));
+}
+
+//console.log(people);
+
+// 5:
 
