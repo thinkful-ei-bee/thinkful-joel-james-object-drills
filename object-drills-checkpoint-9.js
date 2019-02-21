@@ -1,6 +1,7 @@
 'use strict';
 //https://courses.thinkful.com/ei-js-v1/checkpoint/9
 
+// 1:
 let loaf = {
   flour: 300,
   water: 210,
@@ -9,6 +10,21 @@ let loaf = {
   }
 };
 
-console.log(loaf.flour);
-console.log(loaf.water);
-console.log(loaf.hydration());
+// console.log(loaf.flour);
+// console.log(loaf.water);
+// console.log(loaf.hydration());
+
+// 2:
+let derp = {
+  foo: 'this',
+  bar: 'that',
+  fum: 'not this',
+  quux: 'not this but that',
+  spam: 'waffle',
+};
+
+// for (const prop in derp) {
+//   console.log(`Property name: ${prop}, property value: ${derp[prop]}`);
+// }
+
+// 3:
