@@ -20,9 +20,15 @@ const objectB = {
 const expectedKeys = ['id', 'name', 'age', 'city'];
 
 function validateKeys(object, expectedKeys) {
-  // your code goes here
-
-}
+  if (Object.keys(object).length !== expectedKeys.length) {
+    return false;
+    }
+  for (let i = 0; i < expectedKeys.length; i++) {
+    if (objectKeys[i] !== expectedKeys[i]) {
+    return false;
+    }
+  return true;
+  }
 
 /* From here down, you are not expected to 
    understand.... for now :)  
@@ -111,4 +117,5 @@ function testIt() {
   console.log('SUCCESS: validateKeys is working');
 }
 
-testIt();
+testIt()
+}
