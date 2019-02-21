@@ -20,7 +20,6 @@ const objectB = {
 const expectedKeys = ['id', 'name', 'age', 'city'];
 
 function validateKeys(object, expectedKeys) {
-<<<<<<< HEAD
   if (Object.keys(object).length !== expectedKeys.length) {
     return false;
     }
@@ -30,19 +29,6 @@ function validateKeys(object, expectedKeys) {
     }
   return true;
   }
-=======
-  //https://stackoverflow.com/questions/3115982/how-to-check-if-two-arrays-are-equal-with-javascript/16430730
-  let actualKeys = Object.keys(object);
-  if (expectedKeys === actualKeys) return true;
-  if (expectedKeys === null || actualKeys === null) return false;
-  if (expectedKeys.length !== actualKeys.length) return false;
-
-  for (var i = 0; i < expectedKeys.length; ++i) {
-    if (expectedKeys[i] !== actualKeys[i]) return false;
-  }
-  return true;
-}
->>>>>>> 28f912140b724c499f936a60e60853b022f86467
 
 /* From here down, you are not expected to 
    understand.... for now :)  
