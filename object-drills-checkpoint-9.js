@@ -81,4 +81,29 @@ people.forEach(person => {
   person.boss === undefined ? console.log(noBoss) : console.log(hasBoss);
 });
 
-// 6:
+// 6: Redo of cracking the code
+
+function decode(word, cipher){
+  if(cipher[word[0]]){
+    return word[cipher[word[0]]];
+  }
+  return 'No match';
+}
+
+let input = 'craft block argon meter bells brown croon droop'.split(' ');
+
+
+function decodeWords(words){
+  let cipher = {
+    a: 2,
+    b: 3,
+    c: 4,
+    d: 5,
+  };
+  for (const word in words) {
+    console.log(decode(input[0], cipher));
+  }
+  
+}
+
+decodeWords(input);
