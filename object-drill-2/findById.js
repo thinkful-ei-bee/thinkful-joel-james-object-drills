@@ -9,7 +9,11 @@ const scratchData = [
 ];
 
 function findById(items, idNum) {
-  // your code here
+  items.forEach(item => {
+    if (item.id === idNum) {
+      return item;
+    }
+  });
 }
 
 //
