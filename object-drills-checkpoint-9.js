@@ -42,7 +42,7 @@ let hobbitMeals = {
 
 //console.log(hobbitMeals.meals[3]);
 
-// 4:
+// 4 / 5:
 
 function createPerson(...attributes){
   const [ name, jobTitle ] = attributes;
@@ -51,7 +51,6 @@ function createPerson(...attributes){
     jobTitle,
   };
 }
-
 let people = [];
 let names = [
   'Jazz Jackrabbit',
@@ -68,7 +67,18 @@ for (let i = 0; i < 3; i++) {
   people.push(createPerson(names[i], jobs[i]));
 }
 
-//console.log(people);
+people.map((people) => {
+  if(people.name !== names[2]){
+    people.boss = names[2];
+  }
+});
 
-// 5:
+console.log(people);
 
+people.forEach(person => {
+  let noBoss = `${person.jobTitle} ${person.name} doesn't report to anybody.`;
+  let hasBoss = `${person.jobTitle} ${person.name} reports to ${person.boss}`;
+  person.boss === undefined ? console.log(noBoss) : console.log(hasBoss);
+});
+
+// 6:
