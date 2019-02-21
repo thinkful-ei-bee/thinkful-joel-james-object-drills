@@ -1,82 +1,82 @@
+'use strict';
+
 const studentData = [
+  {
+    name: 'Tim',
+    status: 'Current student',
+    course: 'Biology',
+  },
+  {
+    name: 'Sue',
+    status: 'Withdrawn',
+    course: 'Mathematics',
+  },
+  {
+    name: 'Liz',
+    status: 'On leave',
+    course: 'Computer science',
+  },
+];
+  
+function enrollInSummerSchool(students) {
+  students.forEach(element => {
+    element.status='In Summer school';
+  });
+  return students;
+}
+  
+/* From here down, you are not expected to understand.... for now :)
+  Nothing to see here!
+
+*/
+  
+// tests
+
+function testIt() {
+  var testData = [
     {
-      name: 'Tim',
-      status: 'Current student',
+      name: 'Burt',
+      status: 'Playing hooky',
       course: 'Biology',
     },
     {
-      name: 'Sue',
-      status: 'Withdrawn',
+      name: 'Melanie',
+      status: 'Sick',
       course: 'Mathematics',
     },
     {
-      name: 'Liz',
-      status: 'On leave',
+      name: 'Leonard',
+      status: 'AWOL',
       course: 'Computer science',
     },
   ];
   
-  function enrollInSummerSchool(students) {
-    return students.map(students => {
-        students.name = students.name;
-        students.status = 'In Summer school';
-        students.course = students.course;
-    });
+  var results = enrollInSummerSchool(testData);
+
+  if (!(results && results instanceof Array)) {
+    console.error('FAILURE: `enrollSummerSchool` must return an array');
+    return;
   }
-  
-  /* From here down, you are not expected to understand.... for now :)
-    Nothing to see here!
-  
-  */
-  
-  // tests
-  
-  function testIt() {
-    var testData = [
-      {
-        name: 'Burt',
-        status: 'Playing hooky',
-        course: 'Biology',
-      },
-      {
-        name: 'Melanie',
-        status: 'Sick',
-        course: 'Mathematics',
-      },
-      {
-        name: 'Leonard',
-        status: 'AWOL',
-        course: 'Computer science',
-      },
-    ];
-  
-    var results = enrollInSummerSchool(testData);
-  
-    if (!(results && results instanceof Array)) {
-      console.error('FAILURE: `enrollSummerSchool` must return an array');
-      return;
-    }
-    var result = testData.every(function(student) {
-      var match = results.find(function(_student) {
-        return (
-          _student.name === student.name &&
-          _student.course === student.course &&
-          _student.status.toLowerCase() === 'in summer school'
-        );
-      });
-      return match !== undefined;
-    });
-    if (!result) {
-      console.error(
-        'FAILURE: `enrollSummerSchool` should return ' +
-          'original key/value pairs for each student, and ' +
-          'update `status` to "In Summer school": ' +
-          JSON.stringify(results)
+  var result = testData.every(function(student) {
+    var match = results.find(function(_student) {
+      return (
+        _student.name === student.name &&
+        _student.course === student.course &&
+        _student.status.toLowerCase() === 'in summer school'
       );
-    } else {
-      console.info('SUCCESS: `enrollSummerSchool` is working');
-    }
+    });
+    return match !== undefined;
+  });
+  if (!result) {
+    console.error(
+      'FAILURE: `enrollSummerSchool` should return ' +
+        'original key/value pairs for each student, and ' +
+        'update `status` to "In Summer school": ' +
+        JSON.stringify(results)
+    );
+  } else {
+    console.info('SUCCESS: `enrollSummerSchool` is working');
   }
-  
-  testIt();
-  
+}
+
+testIt();
