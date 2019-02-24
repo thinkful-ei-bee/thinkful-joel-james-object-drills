@@ -125,9 +125,19 @@ function createCharacter(name, nickName, race){
       if(y > x){
         damage = 0;
       }
+      return `Your opponent takes ${x} damage and you receive ${y} damage`;
     }
   }
 }
 
-let gandalf = createCharacter('Gandalf the White', 'gandalf', 'wizard');
-console.log(gandalf.describe());
+let characters = [];
+characters[0] = createCharacter('Gandalf the White',        'gandalf',  'wizard');
+characters[1] = createCharacter('Bilbo Baggins',            'bilbo',    'Hobbit');
+characters[2] = createCharacter('Frodo Baggins',            'frodo',    'Hobbit');
+characters[3] = createCharacter('Aragorn son of Arathorn',  'aragorn',  'Man');
+characters[4] = createCharacter('Legolas',                  'legolas',  'Elf');
+characters[5] = createCharacter('d',                         'd',       'd');
+
+characters.forEach(element => {
+  console.log(element);
+});
