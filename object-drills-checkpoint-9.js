@@ -83,6 +83,7 @@ people.map((people) => {
 // 6: Redo of cracking the code
 
 function decode(word, cipher){
+  // There is a lot more we could do here, time constrained
   for (var key in cipher) {
     if (key === word[0]) {
       return word[cipher[key] - 1];
@@ -107,11 +108,26 @@ let cipher = {
   c: 4,
   d: 5,
 };
-console.log(decodeWords(input, cipher));
+//console.log(decodeWords(input, cipher));
 
-// let obj = {
-//   a: 'some value',
-//   b: 'another thing'
-// };
-// let filtered = ['a'].filter(key => obj.hasOwnProperty(key));
-// console.log(obj[filtered]);
+function createCharacter(name, nickName, race){
+  return {
+    name,
+    nickName,
+    race,
+    describe: function() { 
+      return `${this.name} is a ${this.race} from ${this.origin}`; 
+    },
+    evaluateFight: function(character) {
+      let x = this.attack - character.attack;
+      let y = this.defense - character.defense;
+      let damage;
+      if(y > x){
+        damage = 0;
+      }
+    }
+  }
+}
+
+let gandalf = createCharacter('Gandalf the White', 'gandalf', 'wizard');
+console.log(gandalf.describe());
